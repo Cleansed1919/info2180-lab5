@@ -13,11 +13,22 @@ if (isset($_GET["country"])) {
   $slimquery = trim($_GET["country"]);
   $nuquery = filter_var($slimquery, FILTER_SANITIZE_STRING);
   if (empty($nuquery) || $nuquery == "" || $nuquery == " ") {
-    echo "<ul>";
-    foreach ($results as $row): 
-      echo "<li>" . $row['name'] . " is ruled by" . $row['head_of_state'] . "</li>";
+    echo "<table>";
+    echo "<tr>";
+    echo "<th>Name</th>";
+    echo "<th>Continent</th>";
+    echo "<th>Independence Year</th>";
+    echo "<th>Head of State</th>";
+    echo "</tr>";
+    foreach ($results as $row):
+      echo "<tr>";
+      echo "<td>" . $row['name'] . "</td>";
+      echo "<td>" . $row['continent'] . "</td>";
+      echo "<td>" . $row['independence_year'] . "</td>";
+      echo "<td>" . $row['head_of_state'] . "</td>";
+      echo "</tr>";
     endforeach;
-    echo "</ul>";
+    echo "</table>";
   }
   else {
     if (empty($nuquery)) {
@@ -26,19 +37,41 @@ if (isset($_GET["country"])) {
     else {
       $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$nuquery%';");
       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      echo "<ul>";
-      foreach ($results as $row): 
-        echo "<li>" . $row['name'] . " is ruled by" . $row['head_of_state'] . "</li>";
+      echo "<table>";
+      echo "<tr>";
+      echo "<th>Name</th>";
+      echo "<th>Continent</th>";
+      echo "<th>Independence Year</th>";
+      echo "<th>Head of State</th>";
+      echo "</tr>";
+      foreach ($results as $row):
+        echo "<tr>";
+        echo "<td>" . $row['name'] . "</td>";
+        echo "<td>" . $row['continent'] . "</td>";
+        echo "<td>" . $row['independence_year'] . "</td>";
+        echo "<td>" . $row['head_of_state'] . "</td>";
+        echo "</tr>";
       endforeach;
-      echo "</ul>";
+      echo "</table>";
     }
   }
 }
 else {
-  echo "<ul>";
-  foreach ($results as $row): 
-    echo "<li>" . $row['name'] . " is ruled by" . $row['head_of_state'] . "</li>";
+  echo "<table>";
+  echo "<tr>";
+  echo "<th>Name</th>";
+  echo "<th>Continent</th>";
+  echo "<th>Independence Year</th>";
+  echo "<th>Head of State</th>";
+  echo "</tr>";
+  foreach ($results as $row):
+    echo "<tr>";
+    echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . $row['continent'] . "</td>";
+    echo "<td>" . $row['independence_year'] . "</td>";
+    echo "<td>" . $row['head_of_state'] . "</td>";
+    echo "</tr>";
   endforeach;
-  echo "</ul>";
+  echo "</table>";
 }
 ?>
