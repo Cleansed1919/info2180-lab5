@@ -33,6 +33,17 @@ th {
     border: 1px solid #ffffff; 
 }
 
+label {
+    display: flex;
+    font-size: 40px;
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    color:#ffffff;
+    text-align: center;
+    padding-right: 20px;
+}
+
 #controls {
     display: flex;
     justify-content: center;
@@ -45,7 +56,7 @@ th {
     background-color: rgb(255, 255, 255);
     height: 40px;
     width: 470px;
-    border: 1px solid var(--lighterBlue);
+    border: 1px solid rgb(177, 78, 99);
     margin: 10px 0;
     font-family: "Ubuntu Mono", monospace;
     font-weight: 400;
@@ -62,23 +73,12 @@ th {
     width: auto;
 }
 
-label {
-    display: flex;
-    font-size: 40px;
-    font-family: "Ubuntu Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-    color:#ffffff;
-    text-align: center;
-    padding-right: 20px;
-}
-
-#lookup {
-    height: 42px;
+#lookup, #lookupcities {
+    height: 40px;
     width: 170px;
     color: #ffffff;
     background-color: rgb(49, 148, 102);
-    border: 1px solid var(--lighterBlue);
+    border: 1px solid rgb(177, 78, 99);
     margin: 10px 0;
     font-family: "Ubuntu Mono", monospace;
     font-weight: 700;
@@ -93,20 +93,20 @@ label {
     font-style: normal;
   }
   
-  .ubuntu-mono-bold {
+.ubuntu-mono-bold {
     font-family: "Ubuntu Mono", monospace;
     font-weight: 700;
     font-style: normal;
-  }
+}
   
-  .ubuntu-mono-regular-italic {
+.ubuntu-mono-regular-italic {
     font-family: "Ubuntu Mono", monospace;
     font-weight: 400;
     font-style: italic;
-  }
+}
   
-  .ubuntu-mono-bold-italic {
+.ubuntu-mono-bold-italic {
     font-family: "Ubuntu Mono", monospace;
     font-weight: 700;
     font-style: italic;
-  }
+}
